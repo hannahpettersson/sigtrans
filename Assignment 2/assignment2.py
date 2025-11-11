@@ -29,4 +29,25 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 #TASK 2
+dw = 100 #s, men osäker om detta!!!!!!!!!
+w = np.arange(-15e3, 15e3, dw)
 alpha = 1000 * np.pi
+
+frequency_response = (alpha ** 2) / ((alpha + (1j * w)) ** 2)
+
+# Plot magnitude and phase
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
+
+# Magnitude plot
+ax1.plot(w, np.abs(frequency_response))
+ax1.set_xlabel('Frequency ω (rad/s)')
+ax1.set_ylabel('|H(ω)|')
+ax1.set_title('Magnitude Response')
+ax1.grid(True)
+
+# Phase plot
+ax2.plot(w, np.angle(frequency_response))
+ax2.set_xlabel('Frequency ω (rad/s)')
+ax2.set_ylabel('∠H(ω) (radians)')
+ax2.set_title('Phase Response')
+ax2.grid(True)

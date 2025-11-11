@@ -2,15 +2,31 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #coefficient vector with odd numbers from -15 ms to 15ms
-n = np.arange(-10,10,1) #s
-w0 = 15000
-wn = n*w0
-c_n = (1j * (-1)**np.floor(np.abs(n))/np.abs(n)*wn)
+# n = np.arange(-10,10,1) #s
+# n = n[n != 0]
+# t0 = 0.005 #s
+# f0 = 1 / t0
+# w0 = 2*np.pi*f0 #fundamental anguar freq
+# w0_max = 15000
+# wn = n*w0
+# c_n = np.zeros_like(n, dtype=complex)
+# nonzero = n != 0
+# c_n[nonzero] = 1j * ((-1) ** np.floor(np.abs(n[nonzero]))) / np.abs(n[nonzero])
+# Xn = 2 * np.pi * c_n
 
-fig, ax = plt.subplots(2,1)
-ax[0].stem(wn,np.abs(c_n))
-ax[1].stem(wn, np.angle[c_n])
-ax[1].set_xlabel('$n$')
-ax[1].set_ylabel('$c_n$')
-ax[1].grid()
-ax[1].set_xlim((-15.5,15.5))
+# fig, ax = plt.subplots(2,1)
+# ax[0].stem(wn,np.abs(Xn))
+# ax[1].stem(wn, np.angle(Xn))
+# ax[0].set_xlabel('$ \omega$ / rad / s ')
+# ax[1].set_xlabel(' $ \omega$ / rad / s ')
+# ax[0].set_ylabel(r'$|X(\omega)|$')
+# ax[1].set_ylabel(r'$\angle X(\omega)$ [rad]')
+# ax[0].set_title(r'Magnitude Spectrum $|X(\omega)|$')
+# ax[1].set_title(r'Phase Spectrum $\angle X(\omega)$')
+# ax[1].grid()
+# ax[1].set_xlim((-15000,15000))
+
+# plt.show()
+
+#TASK 2
+alpha = 1000 * np.pi
